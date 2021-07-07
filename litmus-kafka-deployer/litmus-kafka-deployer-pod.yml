@@ -7,10 +7,10 @@ metadata:
     app: litmus-kafka-deployer
 spec:
   serviceAccountName: litmus-kafka-sa
-  restartPolicy: OnFailure
+  restartPolicy: Never
   containers:
   - name: litmus-kafka-deployer-container
-    image: litmuschaos/kafka-deployer:latest
+    image: aady12/demotest:latest
     imagePullPolicy: Always
     envFrom:
         - secretRef:

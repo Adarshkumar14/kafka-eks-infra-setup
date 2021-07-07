@@ -34,11 +34,11 @@ variable "k8s_version" {
  }
  variable "desired_nodes"{
      type = number
-     default = 4
+     default = 3
  }
  variable "max_nodes"{
      type = number
-     default = 6
+     default = 3
  }
  variable "spot_price"{
      default= "0.10"

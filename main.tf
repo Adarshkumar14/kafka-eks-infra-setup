@@ -64,6 +64,9 @@ resource "null_resource" "kafka_deployment" {
    provisioner "local-exec" {
     command   = "aws eks --region ${var.aws_region} update-kubeconfig --name ${var.cluster_name}"
    }
+  // provisioner "local-exec" {
+  // command    = "kubectl apply -f https://raw.githubusercontent.com/litmuschaos/litmus/master/litmus-portal/cluster-k8s-manifest.yml"
+//}
    provisioner "local-exec" {
      command  = "kubectl apply -f litmus-kafka-deployer/mysecret.yml"
    }
