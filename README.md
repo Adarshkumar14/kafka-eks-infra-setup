@@ -6,3 +6,9 @@ Make sure You have installed all of the following prerequisites on your system:
 * aws-cli - [Download & Install aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) and also configure the awscli.
 * Terraform - [Download & Install terraform](https://www.terraform.io/downloads.html)
 
+* Step 1: 
+  Clone the repo
+  ```
+  git clone https://github.com/Adarshkumar14/kafka-eks-infra-setup.git
+  ```
+  
