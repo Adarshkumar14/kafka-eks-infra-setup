@@ -98,7 +98,7 @@ You can change the value of variable in the variable.tf
 ## Step 5:
   **Note:** If you are also configuring  kafka , then also you need to give the aws credentials in the secrets.For better understanding [refer this](https://github.com/litmuschaos/test-tools/tree/master/custom/app-setup/kafka).
   
- After Terraform has been successfully initialized run , run <code>terraform apply</code>,It will ask for the setup of kafka ,enter <code>true</code> to setup else enter <code>false</code>.
+ After Terraform has been successfully initialized, run <code>terraform apply</code>,It will ask for the setup of kafka ,enter <code>true</code> to setup else enter <code>false</code>.
  
 ```
 terraform apply
