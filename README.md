@@ -1,5 +1,5 @@
 # kafka-eks-infra-setup
-A terraform script to create a managed kubernetes cluster on AWS EKS with the spot Instance.This script also gives you an option to setup kafka along with prometheus and kafka-provisioned grafana.
+A terraform script to create a managed kubernetes cluster on AWS EKS with the spot Instance.This script also gives you an option to setup kafka along with prometheus and kafka-provisioned grafana and also litmus portal.
 ## Prerequisites
 Make sure You have installed all of the following prerequisites on your system:
 * Kubectl - [Download & Install kubectl](https://kubernetes.io/docs/tasks/tools/) 
@@ -103,7 +103,7 @@ You can change the value of variable in the variable.tf
 ```
 terraform apply
 ```
-It takes approximately 15 minutes to complete.
+It takes approximately 15 minutes to complete.\
  **Note**: If you have not configure the kafka , then to interact with your cluster .You have to run the following command in your terminal:
   ```
   aws eks --region aws_region_name update-kubeconfig --name eks_cluster_name
