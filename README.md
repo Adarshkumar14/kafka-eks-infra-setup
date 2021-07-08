@@ -111,8 +111,8 @@ It takes approximately 15 minutes to complete.\
   Now Your eks-cluster is ready and configured.
   
 ## CleanUp
-  To delete the eks-cluster , run the following command:
+  To delete the eks-cluster, run the following command:
   ```
    terraform destroy
  ```
-It will delete the all the resources that are created by Terraform.
+It will delete all the resources that are created by Terraform.
