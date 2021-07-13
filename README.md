@@ -31,6 +31,12 @@ You can change the value of variable in the variable.tf
     <td><code>eks-vpc</code> </td>
   </tr>
   <tr>
+    <td> <code>tags</code></td>
+    <td> Tags to set for all resources</td>
+    <td><code> Terraform      = "true"</code><br/>
+        <code> Environment    = "kafka"</code></td>
+  </tr>
+  <tr>
     <td><code>vpc_cidr</code></td>
     <td> Subnet CIDR</td>
     <td><code>10.0.0.0/16</code></td>
@@ -115,8 +121,10 @@ You can change the value of variable in the variable.tf
   ```
 ## Step 5: (Optional)
 
-**Note:** If you are also configuring  kafka, Then also you need to create k8s-secret In the current Directory and provide your aws credentials like this:
-
+**Note:** If you are also configuring kafka, Then you need to prepare k8s-secret file In the current Directory and provide your aws credentials.You also need to provide the same cluster name and  region name that you have given in <code>variable.tf</code>.
+```bash
+vim mysecret.yml
+```
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -128,7 +136,7 @@ data:
   AWS_DEFAULT_REGION: "your base64-encoded region"
   EKS_CLUSTER_NAME: "your base64-encoded cluster name"    
 ```
-And provide the file name of secrets in <code>variable.tf</code>.
+And provide the file name of secrets in <code>variable.tf</code> in <code>k8s_secret_name</code>.
 
 For better understanding [refer this](https://github.com/litmuschaos/test-tools/tree/master/custom/app-setup/kafka).
   
@@ -139,13 +147,13 @@ After Terraform has been successfully initialized, run <code>terraform apply</co
 ```
 terraform apply
 ```
-It takes approximately 15 minutes to complete.
+It takes approximately 10-15 minutes to complete without kafka and 15-20 minutes with kafka.
 
 **Note**: If you have not configure the kafka, Then to interact with your cluster, You have to run the following command in your terminal:
 ```
   aws eks --region <aws_region_name> update-kubeconfig --name <eks_cluster_name>
 ```
-Now Your eks-cluster is ready and configured.
+Now your eks-cluster is up and ready to use.
   
 ## CleanUp
   To delete the eks-cluster, run the following command:
